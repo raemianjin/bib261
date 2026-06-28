@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/sheet_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- 제목 -->
+        <TextView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="메모"
+            android:textSize="20sp" android:textStyle="bold"
+            android:textColor="@color/note_text"
+            android:paddingBottom="10dp"/>
+
+        <!-- 참조 -->
+        <TextView android:id="@+id/note_ref"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="15sp" android:textColor="@color/note_accent"
+            android:textStyle="bold" android:paddingBottom="6dp"/>
+
+        <!-- 첫 줄: 작성/수정 일시 (별도 라인) -->
+        <TextView android:id="@+id/note_datetime"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="@color/note_subtle"
+            android:paddingBottom="12dp" android:letterSpacing="0.02"/>
+
+        <!-- 사용자 작성 영역 -->
+        <EditText
+            android:id="@+id/note_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="4"
+            android:maxLines="10"
+            android:maxLength="1000"
+            android:inputType="textMultiLine|textCapSentences"
+            android:background="@drawable/bg_note_input"
+            android:padding="14dp"
+            android:textSize="15sp"
+            android:textColor="@color/note_text"
+            android:gravity="top"
+            android:hint="여기에 메모를 입력하세요 (최대 1000자)"
+            android:textColorHint="@color/note_subtle"/>
+
+        <TextView
+            android:id="@+id/note_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="0 / 1000"
+            android:textSize="11sp"
+            android:textColor="@color/note_subtle"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="2dp"/>
+
+        <!-- 사진 영역 헤더 -->
+        <TextView
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="사진 첨부 · 최대 4장"
+            android:textSize="12sp" android:textColor="@color/note_accent"
+            android:textStyle="bold"
+            android:layout_marginTop="18dp" android:layout_marginBottom="8dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+            <LinearLayout
+                android:id="@+id/photo_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:minHeight="76dp"/>
+        </HorizontalScrollView>
+
+        <!-- 사진 추가: 갤러리 / 카메라 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <Button
+                android:id="@+id/btn_gallery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="0dp"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:text="갤러리"
+                android:textSize="13sp"
+                android:textColor="?attr/colorOnSurface"
+                android:includeFontPadding="false"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_marginEnd="6dp"/>
+            <Button
+                android:id="@+id/btn_camera"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="0dp"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:text="카메라 촬영"
+                android:textSize="13sp"
+                android:textColor="?attr/colorOnSurface"
+                android:includeFontPadding="false"
+                style="@style/Widget.Material3.Button.OutlinedButton"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- 발행 버튼 (강조) -->
+        <Button
+            android:id="@+id/btn_publish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="발행 — 장표로 보기"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:includeFontPadding="false"
+            android:backgroundTint="@color/indigo_light"
+            style="@style/Widget.Material3.Button"/>
+
+        <!-- 복사 / 삭제 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            <Button
+                android:id="@+id/btn_copy_all"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="0dp"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:text="전체복사"
+                android:textSize="13sp"
+                android:textColor="?attr/colorOnSurface"
+                android:includeFontPadding="false"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_marginEnd="6dp"/>
+            <Button
+                android:id="@+id/btn_delete_note"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="0dp"
+                android:paddingTop="11dp"
+                android:paddingBottom="11dp"
+                android:text="전체삭제"
+                android:textSize="13sp"
+                android:textColor="#EF5350"
+                android:includeFontPadding="false"
+                style="@style/Widget.Material3.Button.OutlinedButton"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

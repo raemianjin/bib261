@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxHeight="480dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <!-- 성경 탐색 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="성경 탐색" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="@color/gold_soft" android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="• 목록에서 책 이름 선택 후 장 이동\n• 상단 장 번호 칩으로 직접 이동\n• 구약 / 신약 버튼으로 즉시 이동"
+            android:textSize="13sp" android:lineSpacingExtra="4dp"
+            android:textColor="?attr/colorOnSurface"/>
+
+        <!-- 장 이동 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="장 이동" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="@color/gold_soft" android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="• 좌우 스와이프로 이전 / 다음 장\n• 화면 하단 ◀ ▶ 버튼으로도 이동"
+            android:textSize="13sp" android:lineSpacingExtra="4dp"
+            android:textColor="?attr/colorOnSurface"/>
+
+        <!-- 북마크 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="북마크" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="@color/gold_soft" android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="• 구절 탭 → 메뉴에서 추가\n• 구절 길게 누름 → 즉시 토글\n• 북마크 탭에서 길게 누름 → 삭제"
+            android:textSize="13sp" android:lineSpacingExtra="4dp"
+            android:textColor="?attr/colorOnSurface"/>
+
+        <!-- 검색 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="검색" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="@color/gold_soft" android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="• 돋보기 → 전체 구절 내용 검색\n• 2자 이상 입력 시 실시간 검색\n• 성경 제목으로 찾기 체크 → 책 이름 검색\n• 검색 결과 탭 → 해당 구절로 이동"
+            android:textSize="13sp" android:lineSpacingExtra="4dp"
+            android:textColor="?attr/colorOnSurface"/>
+
+        <!-- 기타 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="기타" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="@color/gold_soft" android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="• 독서화면 상단 Aa → 글자 크기·줄간격\n• 설정 → 병행 표시로 두 역본 함께 보기"
+            android:textSize="13sp" android:lineSpacingExtra="4dp"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginBottom="8dp"/>
+
+    </LinearLayout>
+</ScrollView>

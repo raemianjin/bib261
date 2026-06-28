@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+
+    <!-- 십자가 그림자 (3D 입체감) -->
+    <group
+        android:pivotX="54" android:pivotY="56"
+        android:rotation="-18">
+        <!-- 세로 기둥 그림자 -->
+        <path android:pathData="M51,30 h13 v50 h-13 z"
+            android:fillColor="#33000000"
+            android:translateX="3" android:translateY="3"/>
+        <!-- 가로 기둥 그림자 -->
+        <path android:pathData="M40,44 h35 v12 h-35 z"
+            android:fillColor="#33000000"
+            android:translateX="3" android:translateY="3"/>
+    </group>
+
+    <!-- 십자가 본체 (비스듬히 회전 + 황금 그라데이션) -->
+    <group
+        android:pivotX="54" android:pivotY="56"
+        android:rotation="-18">
+
+        <!-- 세로 기둥 -->
+        <path android:pathData="M48,28 h12 v52 h-12 z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="48" android:startY="28"
+                    android:endX="60" android:endY="80">
+                    <item android:offset="0.0" android:color="#FFFFF3C4"/>
+                    <item android:offset="0.5" android:color="#FFE8C766"/>
+                    <item android:offset="1.0" android:color="#FFC2963A"/>
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- 세로 기둥 측면 하이라이트 (입체) -->
+        <path android:pathData="M48,28 h4 v52 h-4 z"
+            android:fillColor="#66FFFFFF"/>
+
+        <!-- 가로 기둥 -->
+        <path android:pathData="M37,42 h34 v12 h-34 z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="linear"
+                    android:startX="37" android:startY="42"
+                    android:endX="71" android:endY="54">
+                    <item android:offset="0.0" android:color="#FFFFF3C4"/>
+                    <item android:offset="0.5" android:color="#FFE8C766"/>
+                    <item android:offset="1.0" android:color="#FFC2963A"/>
+                </gradient>
+            </aapt:attr>
+        </path>
+
+        <!-- 가로 기둥 상단 하이라이트 -->
+        <path android:pathData="M37,42 h34 v3 h-34 z"
+            android:fillColor="#66FFFFFF"/>
+    </group>
+</vector>

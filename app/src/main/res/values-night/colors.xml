@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 다크 모드 팔레트 (기존 앱 기본 룩) -->
+<resources>
+    <!-- 브랜드(공통) -->
+    <color name="indigo">#3A3E6E</color>
+    <color name="indigo_dark">#272A4E</color>
+    <color name="indigo_light">#4E5388</color>
+    <color name="gold">#C2963A</color>
+    <color name="gold_soft">#C2A263</color>
+
+    <!-- 텍스트 -->
+    <color name="ink">#E8EAF6</color>
+    <color name="ink_soft">#5A6075</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- 라인/하이라이트 -->
+    <color name="divider">#2A2D4A</color>
+    <color name="verse_highlight">#1A1E3E</color>
+    <color name="multicopy_start">#24371F</color>
+
+    <!-- 시트/입력/메모 토큰 -->
+    <color name="sheet_bg">#1E2138</color>
+    <color name="menu_sheet">#1E2138</color>
+    <color name="input_bg">#12152A</color>
+    <color name="note_text">#F4F1E8</color>
+    <color name="note_subtle">#9CA3C0</color>
+    <color name="note_accent">#E8C766</color>
+</resources>

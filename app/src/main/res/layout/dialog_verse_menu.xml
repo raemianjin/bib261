@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_menu_sheet"
+    android:paddingTop="20dp"
+    android:paddingBottom="8dp">
+
+    <!-- 참조 헤더 + 다중복사 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="14dp">
+
+        <TextView
+            android:id="@+id/menu_ref"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/gold_soft"
+            android:textSize="13sp"
+            android:letterSpacing="0.04"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/menu_multicopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다중복사"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="#222222"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="5dp"
+            android:background="@drawable/bg_pill_yellow" />
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/divider" android:layout_marginBottom="4dp"/>
+
+    <TextView android:id="@+id/menu_copy"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp" android:paddingVertical="15dp"
+        android:text="복사" android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface"
+        android:background="?attr/selectableItemBackground"/>
+
+    <TextView android:id="@+id/menu_share"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp" android:paddingVertical="15dp"
+        android:text="공유" android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface"
+        android:background="?attr/selectableItemBackground"/>
+
+    <TextView android:id="@+id/menu_bookmark"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp" android:paddingVertical="15dp"
+        android:text="북마크 추가" android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface"
+        android:background="?attr/selectableItemBackground"/>
+
+    <TextView android:id="@+id/menu_note"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp" android:paddingVertical="15dp"
+        android:text="메모 추가" android:textSize="16sp"
+        android:textColor="@color/gold_soft"
+        android:textStyle="bold"
+        android:background="?attr/selectableItemBackground"/>
+
+    <TextView android:id="@+id/menu_search"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp" android:paddingVertical="15dp"
+        android:text="인터넷 검색" android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface"
+        android:background="?attr/selectableItemBackground"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/divider" android:layout_marginVertical="4dp"/>
+
+    <TextView android:id="@+id/menu_ai"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp" android:paddingVertical="15dp"
+        android:text="AI에 보내기" android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface"
+        android:background="?attr/selectableItemBackground"/>
+
+    <TextView android:id="@+id/menu_ai_view"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp" android:paddingVertical="15dp"
+        android:text="AI 메모 보기 / 수정" android:textSize="16sp"
+        android:textColor="?attr/colorOnSurface"
+        android:visibility="gone"
+        android:background="?attr/selectableItemBackground"/>
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_bible"    android:title="@string/tab_bible"    android:icon="@drawable/ic_book"/>
+    <item android:id="@+id/nav_bookmark" android:title="@string/tab_bookmark" android:icon="@drawable/ic_bookmark"/>
+    <item android:id="@+id/nav_note"     android:title="@string/tab_note"     android:icon="@drawable/ic_note"/>
+    <item android:id="@+id/nav_settings" android:title="@string/tab_settings" android:icon="@drawable/ic_settings"/>
+</menu>

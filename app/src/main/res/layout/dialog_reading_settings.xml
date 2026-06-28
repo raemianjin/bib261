@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="8dp">
+
+    <!-- 미리보기 -->
+    <TextView
+        android:id="@+id/preview_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="태초에 하나님이 천지를 창조하시니라"
+        android:textColor="@color/ink"
+        android:textSize="17sp"
+        android:lineSpacingExtra="6dp"
+        android:padding="14dp"
+        android:background="@drawable/bg_card"
+        android:layout_marginBottom="20dp" />
+
+    <!-- 글자 크기 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="글자 크기"
+        android:textColor="@color/ink_soft"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/seek_font"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:max="5" />
+
+    <!-- 줄 간격 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="줄 간격"
+        android:textColor="@color/ink_soft"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:layout_marginTop="14dp" />
+
+    <SeekBar
+        android:id="@+id/seek_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:max="5" />
+
+</LinearLayout>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+
+        <!-- 도움말 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="도움말" android:textSize="12sp" android:textColor="@color/gold_soft"
+            android:textStyle="bold" android:letterSpacing="0.08"
+            android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="6dp"
+            app:cardCornerRadius="14dp" app:cardElevation="0dp" app:cardBackgroundColor="?attr/colorSurface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout android:id="@+id/btn_usage" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="사용법 보기"
+                        android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+                <LinearLayout android:id="@+id/btn_log" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="진단 로그 보기"
+                        android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 표시 설정 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="표시 설정" android:textSize="12sp" android:textColor="@color/gold_soft"
+            android:textStyle="bold" android:letterSpacing="0.08"
+            android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="6dp"
+            app:cardCornerRadius="14dp" app:cardElevation="0dp" app:cardBackgroundColor="?attr/colorSurface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 테마 -->
+                <LinearLayout android:id="@+id/btn_theme" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="화면 테마" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:id="@+id/tv_theme_value" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="다크" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <!-- 공유 문구 -->
+                <LinearLayout android:id="@+id/btn_signature" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="공유 장표 서명 문구" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:id="@+id/tv_signature_value" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:text="기본 (한영Bible)" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"
+                            android:singleLine="true" android:ellipsize="end"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 구절 제스처 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="구절 누름 동작" android:textSize="12sp" android:textColor="@color/gold_soft"
+            android:textStyle="bold" android:letterSpacing="0.08"
+            android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="6dp"
+            app:cardCornerRadius="14dp" app:cardElevation="0dp" app:cardBackgroundColor="?attr/colorSurface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout android:id="@+id/btn_gesture_single" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="16dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="한 번 누름" android:textSize="15sp"
+                        android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:id="@+id/tv_gesture_single_value" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="없음" android:textSize="14sp"
+                        android:textColor="@color/gold_soft" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="18sp" android:textColor="@color/ink_soft" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_gesture_double" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="16dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="두 번 연속 누름" android:textSize="15sp"
+                        android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:id="@+id/tv_gesture_double_value" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="팝업 메뉴" android:textSize="14sp"
+                        android:textColor="@color/gold_soft" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="18sp" android:textColor="@color/ink_soft" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_gesture_triple" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="16dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="세 번 연속 누름" android:textSize="15sp"
+                        android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:id="@+id/tv_gesture_triple_value" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="다중 복사" android:textSize="14sp"
+                        android:textColor="@color/gold_soft" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="18sp" android:textColor="@color/ink_soft" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_gesture_long" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="16dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="꾹 누름(롱프레스)" android:textSize="15sp"
+                        android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:id="@+id/tv_gesture_long_value" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="북마크" android:textSize="14sp"
+                        android:textColor="@color/gold_soft" android:textStyle="bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="18sp" android:textColor="@color/ink_soft" android:layout_marginStart="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 데이터 백업 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="데이터 백업 / 가져오기" android:textSize="12sp" android:textColor="@color/gold_soft"
+            android:textStyle="bold" android:letterSpacing="0.08"
+            android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="6dp"
+            app:cardCornerRadius="14dp" app:cardElevation="0dp" app:cardBackgroundColor="?attr/colorSurface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout android:id="@+id/btn_backup" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="백업 내보내기 (.zip)" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="설정·메모·QT·사진 전체 (재설치 복원용)" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_csv" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="CSV로 내보내기" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="메모·QT 텍스트 (엑셀용, 사진 제외)" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_import" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="가져오기 (백업 .zip)" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="기존 메모·QT를 백업 내용으로 덮어씁니다" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_export_json" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="아이폰 호환 내보내기 (.json)" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="북마크·메모·QT·사진을 한 파일로 (아이폰 웹앱과 공용)" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_import_json" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="아이폰 호환 가져오기 (.json)" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="아이폰/웹에서 내보낸 .json을 불러옵니다" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 주보 링크 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="주보 설정" android:textSize="12sp" android:textColor="@color/gold_soft"
+            android:textStyle="bold" android:letterSpacing="0.08"
+            android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+            app:cardCornerRadius="14dp" app:cardElevation="0dp" app:cardBackgroundColor="?attr/colorSurface">
+            <LinearLayout android:id="@+id/btn_bulletin_url" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:orientation="horizontal"
+                android:gravity="center_vertical" android:padding="18dp"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="이번주 주보 링크 변경" android:textSize="16sp"
+                        android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="북마크 탭에 표시될 주보 URL" android:textSize="12sp"
+                        android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                </LinearLayout>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- AI 설정 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="AI 설정" android:textSize="12sp" android:textColor="@color/gold_soft"
+            android:textStyle="bold" android:letterSpacing="0.08"
+            android:layout_marginTop="14dp" android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginBottom="14dp"
+            app:cardCornerRadius="14dp" app:cardElevation="0dp" app:cardBackgroundColor="?attr/colorSurface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="AI 기능 사용" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="켜면 구절 메뉴 등에 AI 항목이 나타납니다" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <androidx.appcompat.widget.SwitchCompat android:id="@+id/sw_ai_enabled"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_ai_model" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="AI 제공자 / 모델" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:id="@+id/tv_ai_model_value" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:text="Google Gemini · gemini-2.0-flash"
+                            android:textSize="12sp" android:textColor="@color/ink_soft" android:layout_marginTop="2dp"
+                            android:singleLine="true" android:ellipsize="end"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_ai_key" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="API 키 관리 (Gemini · Groq)" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:id="@+id/tv_ai_key_value" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:text="(미설정)" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"
+                            android:singleLine="true" android:ellipsize="end"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_ai_verse_prompt" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="구절 프롬프트" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="구절을 AI에 보낼 때 함께 보낼 지시문" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_ai_bulletin_prompt" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="주보 요약 프롬프트" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="주보 말씀 구절 요약에 쓸 지시문" android:textSize="12sp"
+                            android:textColor="@color/ink_soft" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider"/>
+
+                <LinearLayout android:id="@+id/btn_ai_bulletin_model" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="horizontal"
+                    android:gravity="center_vertical" android:padding="18dp"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="주보 요약 AI · 모델" android:textSize="16sp" android:textColor="?attr/colorOnSurface"/>
+                        <TextView android:id="@+id/tv_ai_bulletin_model_value" android:layout_width="0dp"
+                            android:layout_height="wrap_content" android:text="Google Gemini · gemini-2.0-flash"
+                            android:textSize="12sp" android:textColor="@color/ink_soft" android:layout_marginTop="2dp"
+                            android:singleLine="true" android:ellipsize="end"/>
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="›" android:textSize="20sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 앱 정보 -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="앱 정보" android:textSize="12sp" android:textColor="@color/gold_soft"
+            android:textStyle="bold" android:letterSpacing="0.08" android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp" app:cardElevation="0dp" app:cardBackgroundColor="?attr/colorSurface">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="18dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:paddingVertical="6dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="만든이" android:textSize="15sp"
+                        android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="영찬영하 Daddy" android:textSize="15sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="4dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:paddingVertical="6dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="버전" android:textSize="15sp"
+                        android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="2.6.1" android:textSize="15sp" android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="4dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:paddingVertical="6dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="성경 데이터" android:textSize="15sp"
+                        android:textColor="?attr/colorOnSurface"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="개역개정 4판 · KJV" android:textSize="14sp"
+                        android:textColor="@color/ink_soft"/>
+                </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginVertical="4dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="8dp"
+                    android:text="본 앱은 개인용으로만 사용합니다."
+                    android:textSize="12sp"
+                    android:textColor="@color/ink_soft"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-light" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

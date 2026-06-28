@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground">
+
+    <!-- 커스텀 툴바: 뒤로가기 + 제목 + 노랑토글 + 주황토글 + 폰트버튼 -->
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/indigo"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 뒤로가기 -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="뒤로"
+            android:tint="@color/white" />
+
+        <!-- 제목 -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:paddingStart="4dp" />
+
+        <!-- 음성 읽기 (TTS) — 토글과 통일된 원형 레터마크 -->
+        <TextView
+            android:id="@+id/btn_tts"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="6dp"
+            android:gravity="center"
+            android:text="TTS"
+            android:textStyle="bold"
+            android:textSize="9sp"
+            android:textColor="#222222"
+            android:background="@drawable/bg_toggle_off"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="음성 읽기" />
+
+        <!-- 노랑: 병행 ON/OFF -->
+        <TextView
+            android:id="@+id/btn_parallel"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="6dp"
+            android:gravity="center"
+            android:text="B"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            android:textColor="#222222"
+            android:background="@drawable/bg_toggle_off"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- 주황: 메인/서브 전환 -->
+        <TextView
+            android:id="@+id/btn_swap"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="6dp"
+            android:gravity="center"
+            android:text="⇄"
+            android:textSize="14sp"
+            android:textColor="#222222"
+            android:background="@drawable/bg_toggle_off"
+            android:alpha="0.35"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <!-- 폰트 설정 버튼 -->
+        <ImageButton
+            android:id="@+id/btn_font"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/ic_text_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="글자 크기"
+            android:tint="@color/white" />
+
+    </LinearLayout>
+
+    <!-- 장 선택 칩 스크롤 -->
+    <HorizontalScrollView
+        android:id="@+id/chapter_scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="?attr/colorSurface"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:id="@+id/chapter_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp" />
+    </HorizontalScrollView>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        app:layout_constraintTop_toBottomOf="@id/chapter_scroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 구절 목록 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/verse_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="80dp"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 이전 장 -->
+    <TextView
+        android:id="@+id/btn_prev"
+        android:layout_width="52dp"
+        android:layout_height="80dp"
+        android:text="◀"
+        android:textSize="20sp"
+        android:textColor="#60FFFFFF"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="12dp" />
+
+    <!-- 다음 장 -->
+    <TextView
+        android:id="@+id/btn_next"
+        android:layout_width="52dp"
+        android:layout_height="80dp"
+        android:text="▶"
+        android:textSize="20sp"
+        android:textColor="#60FFFFFF"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="12dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

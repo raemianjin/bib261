@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView android:id="@+id/btn_search"
+            android:layout_width="44dp" android:layout_height="44dp"
+            android:src="@drawable/ic_search"
+            android:background="@drawable/bg_search"
+            android:padding="10dp"
+            app:tint="@color/ink_soft" />
+
+        <Button android:id="@+id/btn_ot"
+            android:layout_width="wrap_content" android:layout_height="36dp"
+            android:layout_marginStart="8dp" android:text="구약"
+            android:textSize="11sp" android:paddingHorizontal="10dp"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+        <Button android:id="@+id/btn_nt"
+            android:layout_width="wrap_content" android:layout_height="36dp"
+            android:layout_marginStart="4dp" android:text="신약"
+            android:textSize="11sp" android:paddingHorizontal="10dp"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+        <Button android:id="@+id/version_btn"
+            android:layout_width="wrap_content" android:layout_height="36dp"
+            android:layout_marginStart="4dp" android:text="개역개정"
+            android:textSize="10sp" android:paddingHorizontal="8dp"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+    </LinearLayout>
+
+    <!-- 이어서 읽기 카드 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/continue_card"
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp" android:layout_marginTop="4dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/indigo" app:cardCornerRadius="14dp" app:cardElevation="0dp"
+        app:layout_constraintTop_toBottomOf="@id/top_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical"
+            android:padding="14dp" android:foreground="?attr/selectableItemBackground">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="이어서 읽기" android:textColor="@color/gold_soft"
+                    android:textSize="11sp" android:textStyle="bold"/>
+                <TextView android:id="@+id/continue_label"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="창세기 1장" android:textColor="@color/white"
+                    android:textSize="17sp" android:textStyle="bold" android:layout_marginTop="2dp"/>
+            </LinearLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="›" android:textColor="@color/white" android:textSize="24sp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/book_list"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingTop="6dp" android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/continue_card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ═══ 검색 오버레이 ═══ -->
+    <LinearLayout
+        android:id="@+id/search_overlay"
+        android:layout_width="0dp" android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="?android:colorBackground"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 검색 입력 영역 -->
+        <LinearLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/indigo_dark"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="10dp">
+
+            <!-- 입력바 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <ImageView android:id="@+id/btn_search_close"
+                    android:layout_width="40dp" android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:padding="8dp" />
+                <EditText android:id="@+id/search_edit"
+                    android:layout_width="0dp" android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="@drawable/bg_search"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="16sp"
+                    android:hint="검색어를 입력하세요"
+                    android:textColorHint="@color/ink_soft"
+                    android:singleLine="true"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text" />
+                <ImageView android:id="@+id/btn_do_search"
+                    android:layout_width="40dp" android:layout_height="40dp"
+                    android:src="@drawable/ic_search"
+                    android:padding="8dp"
+                    app:tint="@color/gold" />
+            </LinearLayout>
+
+            <!-- 성경제목 찾기 체크박스 -->
+            <CheckBox android:id="@+id/check_title_search"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="6dp"
+                android:text="성경 제목으로 찾기"
+                android:textColor="@color/gold_soft"
+                android:textSize="13sp"
+                android:checked="false"
+                android:buttonTint="@color/gold_soft" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_result_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

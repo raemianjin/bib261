@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">한영Bible</string>
+    <string name="tab_bible">성경</string>
+    <string name="tab_bookmark">북마크</string>
+    <string name="tab_settings">설정</string>
+    <string name="search_hint">검색 (책 이름 또는 구절)</string>
+    <string name="font_size">글자 크기</string>
+    <string name="cancel">취소</string>
+    <string name="delete">삭제</string>
+    <string name="copied">클립보드에 복사됨</string>
+    <string name="bookmarked">북마크 추가됨</string>
+    <string name="bookmark_removed">북마크 제거됨</string>
+    <string name="bookmark_empty">저장된 북마크가 없습니다</string>
+    <string name="save">저장</string>
+    <string name="tab_note">메모구절</string>
+</resources>

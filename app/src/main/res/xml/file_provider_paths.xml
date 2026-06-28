@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path name="memo_photos" path="memo_photos/"/>
+    <files-path name="qt_photos" path="qt_photos/"/>
+    <cache-path name="shared" path="shared/"/>
+</paths>

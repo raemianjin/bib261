@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingStart="20dp"
+    android:paddingEnd="8dp"
+    android:paddingVertical="10dp">
+
+    <TextView
+        android:layout_width="16dp"
+        android:layout_height="wrap_content"
+        android:text="↺"
+        android:textSize="13sp"
+        android:textColor="@color/ink_soft"
+        android:layout_marginEnd="10dp" />
+
+    <TextView
+        android:id="@+id/history_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="13sp"
+        android:textColor="?attr/colorOnSurface"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:foreground="?attr/selectableItemBackgroundBorderless" />
+
+    <TextView
+        android:id="@+id/btn_delete"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:text="✕"
+        android:textSize="11sp"
+        android:textColor="#50FFFFFF"
+        android:background="?attr/selectableItemBackgroundBorderless" />
+</LinearLayout>

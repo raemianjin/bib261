@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 기본(=라이트 모드) 팔레트. 다크 모드 값은 values-night/colors.xml -->
+<resources>
+    <!-- 브랜드(라이트·다크 공통) -->
+    <color name="indigo">#3A3E6E</color>
+    <color name="indigo_dark">#272A4E</color>
+    <color name="indigo_light">#4E5388</color>
+    <color name="gold">#C2963A</color>
+    <color name="gold_soft">#B08433</color>
+
+    <!-- 텍스트 -->
+    <color name="ink">#1A1A22</color>
+    <color name="ink_soft">#6B7280</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- 라인/하이라이트 -->
+    <color name="divider">#E3E3EB</color>
+    <color name="verse_highlight">#FFF3D0</color>
+    <color name="multicopy_start">#DCEFD8</color>
+
+    <!-- 시트/입력/메모 토큰 -->
+    <color name="sheet_bg">#FFFFFF</color>
+    <color name="menu_sheet">#FFFFFF</color>
+    <color name="input_bg">#F1F1F6</color>
+    <color name="note_text">#1A1A22</color>
+    <color name="note_subtle">#6B7280</color>
+    <color name="note_accent">#B8860B</color>
+</resources>
